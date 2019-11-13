@@ -2,6 +2,7 @@ package br.com.una.fordus.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText telefone;
     private EditText email;
     private Button btnAvancar;
-
+    private Cliente cliente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         btnAvancar = findViewById(R.id.btn_avançar);
 
         btnAvancar.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
@@ -68,35 +70,27 @@ public class MainActivity extends AppCompatActivity {
 
                 if (nomeDeVerdade != null && cpfDeVerdade != null && telefoneDeVerdade != null && emailDeVerdade != null){
 
-                    Cliente cliente = new Cliente(
+                    cliente = new Cliente(
                             nomeDeVerdade,
                             cpfDeVerdade,
                             telefoneDeVerdade,
                             emailDeVerdade);
+
+                    vaiPraComponents();
 
                     Toast.makeText(getApplicationContext(),"Bem Vindo " + nome.getText(), Toast.LENGTH_SHORT).show();
 
                 }
 
 
-
-
-
-
-
-
             }
         });
 
+    }
 
-
-
-
-
-
-
-
-
-
+    private void vaiPraComponents(){
+        Intent intent = new Intent(this, ComponentesActivity.class);
+        intent.putExtra("cliente", this.cliente);
+        startActivity(intent);
     }
 }

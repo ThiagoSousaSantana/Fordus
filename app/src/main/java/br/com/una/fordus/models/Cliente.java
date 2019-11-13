@@ -1,6 +1,8 @@
 package br.com.una.fordus.models;
 
-public class Cliente {
+import java.io.Serializable;
+
+public class Cliente implements Serializable {
 
     String nome;
     int cpf;
