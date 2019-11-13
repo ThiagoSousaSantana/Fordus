@@ -6,6 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".activities.ComponentesActivity">
 
+    <Button
+        android:id="@+id/btn_avançarComponentes"
+        android:layout_width="149dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/buttonshape"
+        android:text="Avançar"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <Spinner
         android:id="@+id/spMotores"
         android:layout_width="200dp"

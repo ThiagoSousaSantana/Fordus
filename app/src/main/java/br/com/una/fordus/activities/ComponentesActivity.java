@@ -3,10 +3,12 @@ package br.com.una.fordus.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.R.layout;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -15,8 +17,10 @@ import java.util.Arrays;
 import java.util.List;
 
 import br.com.una.fordus.R;
+import br.com.una.fordus.models.Cliente;
 import br.com.una.fordus.models.Direcao;
 import br.com.una.fordus.models.Motor;
+import br.com.una.fordus.models.Orcamento;
 import br.com.una.fordus.models.Suspencao;
 
 public class ComponentesActivity extends AppCompatActivity {
@@ -25,11 +29,15 @@ public class ComponentesActivity extends AppCompatActivity {
     private Motor motorSelecionado = null;
     private Suspencao suspencaoSelecionado = null;
     private Direcao direcaoSelecionado = null;
+    private Cliente cliente= null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_componentes);
+
+        Intent intent = getIntent();
+        cliente = (Cliente) intent.getSerializableExtra("cliente");
 
         final List<Motor> motores = Arrays.asList(
                 new Motor("Motor 1.0", BigDecimal.valueOf(25000), 80),
@@ -107,5 +115,28 @@ public class ComponentesActivity extends AppCompatActivity {
             }
         });
 
+
+        Button btn = findViewById(R.id.btn_avançarComponentes);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vaiPraOrders();
+            }
+        });
+    }
+
+    private void vaiPraOrders(){
+        Intent intent = new Intent(this, OrderActivity.class);
+
+        Orcamento orcamento = new Orcamento(
+                cliente,
+                motorSelecionado,
+                direcaoSelecionado,
+                suspencaoSelecionado
+        );
+
+        intent.putExtra("orcamento", orcamento);
+        startActivity(intent);
     }
 }
