@@ -1,6 +1,7 @@
 package br.com.una.fordus.models;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 public class Suspencao {
     private String nome;
@@ -11,6 +12,11 @@ public class Suspencao {
         this.nome = nome;
         this.preco = preco;
         this.estabilidade = estabilidade;
+    }
+
+    public String getPrecoFormatado(){
+        DecimalFormat format = new DecimalFormat("R$ #,###,##0.00");
+        return format.format(preco);
     }
 
     public String getNome() {

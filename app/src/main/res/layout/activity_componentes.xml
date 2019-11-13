@@ -8,7 +8,7 @@
 
     <Spinner
         android:id="@+id/spMotores"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
@@ -17,13 +17,13 @@
         app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13999999" />
+        app:layout_constraintVertical_bias="0.22000003" />
 
     <Spinner
         android:id="@+id/spSuspencoes"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/spMotores"
         app:layout_constraintHorizontal_bias="0.503"
@@ -33,9 +33,9 @@
 
     <Spinner
         android:id="@+id/spDirecoes"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/spSuspencoes"
         app:layout_constraintHorizontal_bias="0.503"
@@ -45,9 +45,10 @@
 
     <EditText
         android:id="@+id/edtMotor"
-        android:layout_width="100dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:enabled="false"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="@+id/spMotores"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,16 +56,92 @@
         app:layout_constraintTop_toTopOf="@+id/spMotores" />
 
     <EditText
-        android:id="@+id/edtMotor2"
-        android:layout_width="100dp"
+        android:id="@+id/edtSuspencoes"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:enabled="false"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="@+id/spSuspencoes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toEndOf="@+id/spSuspencoes"
-        app:layout_constraintTop_toTopOf="@+id/spSuspencoes"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/spSuspencoes" />
+
+    <EditText
+        android:id="@+id/edtDirecoes"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/spDirecoes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toEndOf="@+id/spDirecoes"
+        app:layout_constraintTop_toTopOf="@+id/spDirecoes" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Componentes"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="@+id/spMotores"
+        app:layout_constraintStart_toStartOf="@+id/spMotores"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Preços"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="@+id/edtMotor"
+        app:layout_constraintStart_toStartOf="@+id/edtMotor"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Direção"
+        app:layout_constraintBottom_toTopOf="@+id/spDirecoes"
+        app:layout_constraintEnd_toEndOf="@+id/spDirecoes"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spDirecoes"
+        app:layout_constraintTop_toBottomOf="@+id/spSuspencoes"
+        app:layout_constraintVertical_bias="0.84000003" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Suspenção"
+        app:layout_constraintBottom_toTopOf="@+id/spSuspencoes"
+        app:layout_constraintEnd_toEndOf="@+id/spSuspencoes"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spSuspencoes"
+        app:layout_constraintTop_toBottomOf="@+id/spMotores"
+        app:layout_constraintVertical_bias="0.84000003" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Motor"
+        app:layout_constraintBottom_toTopOf="@+id/spMotores"
+        app:layout_constraintEnd_toEndOf="@+id/spMotores"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spMotores"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
