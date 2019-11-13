@@ -1,6 +1,7 @@
 package br.com.una.fordus.models;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 public class Direcao {
 
@@ -12,6 +13,11 @@ public class Direcao {
         this.nome = nome;
         this.preco = preco;
         this.carga = carga;
+    }
+
+    public String getPrecoFormatado(){
+        DecimalFormat format = new DecimalFormat("R$ #,###,##0.00");
+        return format.format(preco);
     }
 
     public String getNome() {
