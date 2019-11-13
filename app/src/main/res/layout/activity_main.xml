@@ -7,7 +7,7 @@
     tools:context=".activities.MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/title_cliente"
         android:layout_width="99dp"
         android:layout_height="27dp"
         android:text="FORDUS"
@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/title_cliente"
         app:layout_constraintVertical_bias="0.141" />
 
     <EditText
@@ -86,7 +86,7 @@
         android:src="@drawable/ic_car"
 
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/title_cliente"
         app:layout_constraintHorizontal_bias="0.865"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
